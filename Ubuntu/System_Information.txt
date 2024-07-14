@@ -1,0 +1,53 @@
+System Information Commands in Ubuntu
+
+1. Introduction
+-----------------
+Monitoring system information is crucial for understanding system performance, resource usage, and troubleshooting issues in Ubuntu.
+
+2. Basic System Information Commands
+-------------------------------------
+1. Displaying System Information:
+----------------------------------
+To display system information including kernel version and architecture.
+Command:
+uname -a
+
+Example:
+uname -a
+
+2. Displaying Linux Tasks:
+---------------------------
+To display Linux tasks and resource usage interactively.
+Command:
+top
+
+Example:
+top
+
+3. Showing Disk Usage:
+-----------------------
+To show disk usage in a human-readable format.
+Command:
+df -h
+
+Example:
+df -h
+
+4. Displaying Memory Usage:
+----------------------------
+To display free and used memory.
+Command:
+free -h
+
+Example:
+free -h
+
+3. Conclusion
+--------------
+Using these commands will help you monitor system performance, disk usage, and memory usage effectively in Ubuntu.
+
+For more detailed information, refer to the man pages:
+- uname: `man uname`
+- top: `man top`
+- df: `man df`
+- free: `man free`

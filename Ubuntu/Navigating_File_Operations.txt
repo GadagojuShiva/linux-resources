@@ -1,0 +1,128 @@
+Navigating the File System in Ubuntu
+
+1. Introduction
+-----------------
+Navigating the file system is essential for finding, creating, modifying, and managing files and directories in Ubuntu.
+
+2. Basic File System Navigation Commands
+-----------------------------------------
+1. Displaying Current Directory:
+----------------------------------
+To display the current directory path.
+Command:
+pwd
+
+Example:
+pwd
+
+2. Listing Files and Directories:
+----------------------------------
+To list files and directories in the current directory.
+Command:
+ls
+
+Example:
+ls
+
+3. Changing Directory:
+------------------------
+To change the current working directory.
+Command:
+cd directory_path
+
+Example (Change to Home Directory):
+cd ~
+
+4. Moving Up One Directory Level:
+-----------------------------------
+To move up to the parent directory.
+Command:
+cd ..
+
+5. Creating a New Directory:
+------------------------------
+To create a new directory.
+Command:
+mkdir directory_name
+
+Example:
+mkdir documents
+
+6. Removing a Directory:
+--------------------------
+To remove an empty directory.
+Command:
+rmdir directory_name
+
+Example:
+rmdir documents
+
+7. Copying Files or Directories:
+----------------------------------
+To copy files or directories.
+Command:
+cp source_path destination_path
+
+Example (Copy file):
+cp file.txt /home/user/documents/
+
+8. Moving or Renaming Files or Directories:
+---------------------------------------------
+To move or rename files or directories.
+Command:
+mv source_path destination_path
+
+Example (Move file):
+mv file.txt /home/user/documents/
+
+9. Removing Files:
+---------------------
+To remove files.
+Command:
+rm file_name
+
+Example:
+rm file.txt
+
+10. Displaying File Contents:
+-------------------------------
+To display the contents of a file.
+Command:
+cat file_name
+
+Example:
+cat file.txt
+
+11. Viewing File Contents Interactively:
+-----------------------------------------
+To view file contents interactively.
+Command:
+less file_name
+
+Example:
+less file.txt
+
+12. Outputting the First Part of Files:
+----------------------------------------
+To output the first part of files.
+Command:
+head file_name
+
+Example:
+head file.txt
+
+13. Outputting the Last Part of Files:
+----------------------------------------
+To output the last part of files.
+Command:
+tail file_name
+
+Example:
+tail file.txt
+
+3. Conclusion
+--------------
+Mastering these basic file system navigation commands will help you efficiently manage files and directories in Ubuntu.
+
+For more detailed information, refer to the man pages:
+- pwd, ls, cd, mkdir, rmdir, cp, mv, rm, cat, less, head, tail: `man command_name`

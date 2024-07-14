@@ -1,0 +1,81 @@
+RAID Commands in Ubuntu
+
+1. Introduction
+-----------------
+RAID allows combining multiple disks into a single logical unit for redundancy or performance improvement.
+
+2. Basic RAID Commands
+------------------------
+1. Creating a RAID Array:
+---------------------------
+To create a RAID array using mdadm (Multiple Device Administration).
+Command:
+sudo mdadm --create /dev/md0 --level=raid_level --raid-devices=num_devices /dev/sdX /dev/sdY ...
+
+Example (RAID 1):
+sudo mdadm --create /dev/md0 --level=1 --raid-devices=2 /dev/sdb /dev/sdc
+
+2. Displaying RAID Information:
+-------------------------------
+To view details about RAID arrays.
+Command:
+cat /proc/mdstat
+
+Example:
+cat /proc/mdstat
+
+3. Monitoring RAID Arrays:
+---------------------------
+To monitor RAID array status and events.
+Command:
+sudo mdadm --monitor --scan
+
+Example:
+sudo mdadm --monitor --scan
+
+4. Stopping and Assembling RAID Arrays:
+----------------------------------------
+To stop or assemble RAID arrays.
+Command:
+sudo mdadm --stop /dev/md0
+sudo mdadm --assemble /dev/md0 /dev/sdX /dev/sdY ...
+
+Example (Assemble):
+sudo mdadm --assemble /dev/md0 /dev/sdb /dev/sdc
+
+5. Managing RAID Arrays:
+--------------------------
+To manage RAID arrays (add, remove, fail devices).
+Command:
+sudo mdadm --manage /dev/md0 --add /dev/sdX
+sudo mdadm --manage /dev/md0 --remove /dev/sdX
+sudo mdadm --manage /dev/md0 --fail /dev/sdX
+
+Example (Add):
+sudo mdadm --manage /dev/md0 --add /dev/sdd
+
+6. Checking RAID Array Consistency:
+-------------------------------------
+To check RAID array consistency.
+Command:
+sudo mdadm --detail /dev/md0
+
+Example:
+sudo mdadm --detail /dev/md0
+
+7. Rebuilding RAID Arrays:
+----------------------------
+To rebuild a degraded RAID array.
+Command:
+sudo mdadm --manage /dev/md0 --re-add /dev/sdX
+
+Example:
+sudo mdadm --manage /dev/md0 --re-add /dev/sdc
+
+3. Conclusion
+--------------
+These basic RAID commands will help you create, manage, monitor, and troubleshoot RAID arrays in Ubuntu.
+
+For more detailed information, refer to the man pages:
+- mdadm: `man mdadm`
+- mdstat: `man proc`

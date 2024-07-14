@@ -1,0 +1,96 @@
+
+Screen Commands Reference Document
+==================================
+
+Screen is a terminal multiplexer that allows you to manage multiple terminal sessions from a single window. Here are some basic and useful commands to get started with Screen in Linux.
+
+Basic Screen Commands
+---------------------
+
+1. Start a New Screen Session
+   Command: screen
+   This will start a new screen session.
+
+2. Start a New Named Screen Session
+   Command: screen -S <session-name>
+   Example: screen -S mysession
+
+3. List All Screen Sessions
+   Command: screen -ls
+   This will list all running screen sessions.
+
+4. Attach to a Detached Screen Session
+   Command: screen -r <session-id>
+   Example: screen -r 1234
+   (You can find the session ID using the screen -ls command.)
+
+5. Detach from a Screen Session
+   Command: Ctrl + a, d
+   This will detach you from the current screen session, leaving it running in the background.
+
+Navigating Within Screen
+------------------------
+
+1. Create a New Window
+   Command: Ctrl + a, c
+   This will create a new window within the screen session.
+
+2. Switch Between Windows
+   Command: Ctrl + a, n (Next window)
+   Command: Ctrl + a, p (Previous window)
+
+3. List All Windows
+   Command: Ctrl + a, "
+   This will list all windows in the current screen session.
+
+4. Rename the Current Window
+   Command: Ctrl + a, A
+   You will be prompted to enter a new name for the current window.
+
+5. Close the Current Window
+   Command: Ctrl + a, k
+   This will close the current window.
+
+Advanced Screen Commands
+------------------------
+
+1. Split the Terminal Vertically
+   Command: Ctrl + a, |
+   This will split the terminal vertically.
+
+2. Split the Terminal Horizontally
+   Command: Ctrl + a, S
+   This will split the terminal horizontally.
+
+3. Switch to the Next Region
+   Command: Ctrl + a, Tab
+   This will switch focus to the next region.
+
+4. Remove All Splits
+   Command: Ctrl + a, Q
+   This will remove all splits, leaving only the current region.
+
+5. Send Command to All Windows
+   Command: Ctrl + a, :
+   Then type: at \# stuff "<command>"
+
+Exiting Screen
+--------------
+
+1. Exit the Current Window
+   Command: exit
+   This will exit the current window. If it is the last window, it will terminate the screen session.
+
+2. Kill the Entire Screen Session
+   Command: Ctrl + a, :quit
+   This will kill the entire screen session.
+
+Useful Tips
+-----------
+
+- You can reattach to a screen session from any terminal, which is particularly useful for remote sessions.
+- Screen allows you to maintain your work even if your network connection drops.
+- You can have multiple named sessions running simultaneously and switch between them as needed.
+
+For more detailed information, you can refer to the Screen man pages:
+Command: man screen

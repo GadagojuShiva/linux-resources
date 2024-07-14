@@ -1,0 +1,126 @@
+IP and Networking Commands in Ubuntu
+
+1. Introduction
+-----------------
+Networking commands in Ubuntu are essential for configuring network interfaces, checking network status, and troubleshooting connectivity.
+
+2. Basic IP and Networking Commands
+-------------------------------------
+1. Checking IP Address and Network Configuration:
+--------------------------------------------------
+To view network interfaces and IP address information.
+Command:
+ip a
+
+Example:
+ip a
+
+2. Checking Network Connectivity:
+----------------------------------
+To test network connectivity to a specific host.
+Command:
+ping hostname_or_ip
+
+Example:
+ping google.com
+
+3. Displaying Routing Table:
+-----------------------------
+To view the routing table.
+Command:
+ip route
+
+Example:
+ip route
+
+4. Checking DNS Configuration:
+-------------------------------
+To view DNS resolver configuration.
+Command:
+cat /etc/resolv.conf
+
+Example:
+cat /etc/resolv.conf
+
+5. Listing Open Ports:
+------------------------
+To list open ports and associated services.
+Command:
+sudo netstat -tuln
+
+Example:
+sudo netstat -tuln
+
+6. Checking Firewall Rules:
+----------------------------
+To view firewall rules (iptables).
+Command:
+sudo iptables -L
+
+Example:
+sudo iptables -L
+
+7. Checking Network Interface Statistics:
+------------------------------------------
+To display network interface statistics.
+Command:
+netstat -i
+
+Example:
+netstat -i
+
+8. Restarting Network Service:
+-------------------------------
+To restart the network service.
+Command:
+sudo systemctl restart networking
+
+Example:
+sudo systemctl restart networking
+
+9. Configuring a Network Interface:
+------------------------------------
+To configure a network interface.
+Command:
+sudo ifconfig interface_name parameters
+
+Example:
+sudo ifconfig eth0 192.168.1.100 netmask 255.255.255.0
+
+10. Sending ICMP ECHO_REQUEST to Network Hosts:
+-----------------------------------------------
+To send ICMP ECHO_REQUEST to network hosts for testing connectivity.
+Command:
+ping hostname_or_ip
+
+Example:
+ping google.com
+
+11. Printing Network Connections and Statistics:
+------------------------------------------------
+To print network connections, routing tables, interface statistics, etc.
+Command:
+netstat options
+
+Example:
+netstat -an
+
+12. Non-interactive Network Downloader:
+----------------------------------------
+To download files non-interactively from the web.
+Command:
+wget URL
+
+Example:
+wget https://example.com/file.tar.gz
+
+13. Conclusion
+--------------
+These basic IP and networking commands will help you configure, monitor, and troubleshoot network connections in Ubuntu.
+
+For more detailed information, refer to the man pages:
+- ip: `man ip`
+- ping: `man ping`
+- netstat: `man netstat`
+- systemctl: `man systemctl`
+- iptables: `man iptables`

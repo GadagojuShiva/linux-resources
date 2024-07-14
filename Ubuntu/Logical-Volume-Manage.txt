@@ -1,0 +1,97 @@
+Logical Volume Management (LVM) Commands in Ubuntu
+
+1. Introduction
+-----------------
+Logical Volume Management (LVM) provides a flexible way to manage storage in Linux by allowing administrators to dynamically resize partitions and volumes.
+
+2. Basic LVM Concepts
+----------------------
+- Physical Volume (PV): Physical disks or partitions used as physical storage.
+- Volume Group (VG): Collection of one or more PVs combined together.
+- Logical Volume (LV): Virtual partitions created from VGs, used as mountable filesystems.
+
+3. LVM Commands
+-----------------
+1. Creating Physical Volumes:
+------------------------------
+To initialize a physical disk or partition for use with LVM.
+Command:
+sudo pvcreate /dev/sdX
+
+Example:
+sudo pvcreate /dev/sdb1
+
+2. Creating Volume Groups:
+---------------------------
+To combine one or more PVs into a single VG.
+Command:
+sudo vgcreate vg_name /dev/sdX
+
+Example:
+sudo vgcreate myvg /dev/sdb1
+
+3. Creating Logical Volumes:
+-----------------------------
+To create a logical volume within a VG.
+Command:
+sudo lvcreate -L size -n lv_name vg_name
+
+Example:
+sudo lvcreate -L 10G -n mylv myvg
+
+4. Displaying LVM Information:
+-------------------------------
+To view information about PVs, VGs, and LVs.
+Command:
+sudo pvdisplay
+sudo vgdisplay
+sudo lvdisplay
+
+5. Resizing Logical Volumes:
+-----------------------------
+To extend or shrink an existing LV.
+Command:
+sudo lvextend -L +size /dev/vg_name/lv_name
+sudo lvreduce -L -size /dev/vg_name/lv_name
+
+Example (Extend):
+sudo lvextend -L +5G /dev/myvg/mylv
+
+6. Mounting and Unmounting Logical Volumes:
+--------------------------------------------
+To mount or unmount an LV.
+Command:
+sudo mount /dev/vg_name/lv_name /mount_point
+sudo umount /mount_point
+
+Example (Mount):
+sudo mount /dev/myvg/mylv /mnt/mylv
+
+7. Removing Logical Volumes:
+-----------------------------
+To remove an LV.
+Command:
+sudo lvremove /dev/vg_name/lv_name
+
+Example:
+sudo lvremove /dev/myvg/mylv
+
+8. Removing Volume Groups and Physical Volumes:
+-----------------------------------------------
+To remove a VG and its associated PVs.
+Command:
+sudo vgremove vg_name
+sudo pvremove /dev/sdX
+
+Example:
+sudo vgremove myvg
+sudo pvremove /dev/sdb1
+
+4. Conclusion
+--------------
+Understanding these basic LVM commands will help you manage storage efficiently in Ubuntu. Always exercise caution when modifying volumes to avoid data loss.
+
+For more detailed information, refer to the man pages:
+- pvcreate, vgcreate, lvcreate: `man 8 pvcreate`
+- lvextend, lvreduce, lvremove: `man 8 lvextend`
+- mount, umount: `man 8 mount`

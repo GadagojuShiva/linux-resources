@@ -1,0 +1,73 @@
+SCP and SSH Commands
+
+1. Introduction
+-----------------
+SCP (Secure Copy) and SSH (Secure Shell) are two essential tools for securely transferring files and remotely accessing servers in Unix-based systems.
+
+2. SSH (Secure Shell)
+----------------------
+SSH is a protocol for securely logging into a remote server and executing commands.
+
+Basic SSH Command:
+-------------------
+ssh username@hostname
+
+Example:
+---------
+ssh user@example.com
+
+Common SSH Options:
+--------------------
+-p : Specify a port to connect to.
+-i : Specify an identity file (private key).
+-L : Forward a local port to a remote address and port.
+
+Example with options:
+----------------------
+ssh -p 2222 -i ~/.ssh/id_rsa user@example.com
+
+3. SCP (Secure Copy)
+----------------------
+SCP is used to securely transfer files between local and remote hosts.
+
+Basic SCP Command:
+-------------------
+scp source_file username@hostname:destination_path
+
+Example:
+---------
+scp file.txt user@example.com:/remote/directory/
+
+Copying from remote to local:
+------------------------------
+scp username@hostname:remote_file local_directory
+
+Example:
+---------
+scp user@example.com:/remote/file.txt /local/directory/
+
+Copying directories:
+----------------------
+To copy directories, use the `-r` (recursive) option.
+
+Example:
+---------
+scp -r /local/directory user@example.com:/remote/directory/
+
+Common SCP Options:
+--------------------
+-P : Specify a port to connect to.
+-i : Specify an identity file (private key).
+-v : Verbose mode (provides detailed output).
+
+Example with options:
+----------------------
+scp -P 2222 -i ~/.ssh/id_rsa -v file.txt user@example.com:/remote/directory/
+
+4. Conclusion
+--------------
+SSH and SCP are powerful tools for managing remote servers and transferring files securely. Understanding these basic commands and options will help you efficiently perform remote operations.
+
+For more detailed information, refer to the man pages:
+- SSH: `man ssh`
+- SCP: `man scp`

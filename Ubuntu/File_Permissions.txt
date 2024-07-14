@@ -1,0 +1,84 @@
+File Permissions in Linux
+
+1. Introduction
+-----------------
+File permissions in Linux control access to files and directories. There are three types of permissions: read, write, and execute, which can be applied to three types of users: owner, group, and others.
+
+2. Alphanumeric (Symbolic) Permissions
+----------------------------------------
+1. Viewing Permissions:
+-------------------------
+To view permissions of files and directories.
+Command:
+ls -l file_or_directory
+
+Example:
+ls -l file.txt
+
+2. Changing Permissions (Symbolic):
+-------------------------------------
+To change permissions using symbolic notation.
+Command:
+chmod permissions file_or_directory
+
+Example (Give read and write permissions to owner):
+chmod u+rw file.txt
+
+Symbolic Notation:
+- u: User/Owner
+- g: Group
+- o: Others
+- a: All (equivalent to ugo)
+- +: Add permission
+- -: Remove permission
+- =: Set exact permission
+
+Permissions:
+- r: Read
+- w: Write
+- x: Execute
+
+Example (Give read and write permissions to owner, read-only to group and others):
+chmod u+rw,g+r,o+r file.txt
+
+3. Numeric Permissions
+-------------------------
+1. Viewing Permissions:
+-------------------------
+To view permissions of files and directories in numeric format.
+Command:
+ls -l file_or_directory
+
+Example:
+ls -l file.txt
+
+2. Changing Permissions (Numeric):
+-----------------------------------
+To change permissions using numeric notation.
+Command:
+chmod xyz file_or_directory
+
+Where x, y, and z represent:
+- User/Owner permissions
+- Group permissions
+- Others permissions
+
+Permissions are represented numerically as:
+- 4: Read (r)
+- 2: Write (w)
+- 1: Execute (x)
+
+Calculate the sum of desired permissions:
+- r: 4
+- w: 2
+- x: 1
+
+Example (Give read and write permissions to owner, read-only to group and others):
+chmod 644 file.txt
+
+3. Conclusion
+--------------
+Understanding file permissions in Linux is crucial for managing access to files and ensuring security. The alphanumeric (symbolic) and numeric representations provide flexibility in managing permissions based on user requirements.
+
+For more detailed information, refer to the man pages:
+- chmod: `man chmod`
