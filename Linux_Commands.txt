@@ -1,1 +1,83 @@
 
+# Reference document for snap commands:
+
+Snap Commands Reference Document
+================================
+
+Basic Snap Commands
+-------------------
+
+1. Install a Snap Package
+   Command: sudo snap install <package-name>
+   Example: sudo snap install vlc
+
+2. Remove a Snap Package
+   Command: sudo snap remove <package-name>
+   Example: sudo snap remove vlc
+
+3. List Installed Snap Packages
+   Command: snap list
+
+4. Find Snap Packages
+   Command: snap find <package-name>
+   Example: snap find vlc
+
+5. Get Information About a Snap Package
+   Command: snap info <package-name>
+   Example: snap info vlc
+
+Snap Maintenance Commands
+-------------------------
+
+1. Update All Snap Packages
+   Command: sudo snap refresh
+
+2. Update a Specific Snap Package
+   Command: sudo snap refresh <package-name>
+   Example: sudo snap refresh vlc
+
+3. Revert to the Previous Version of a Snap Package
+   Command: sudo snap revert <package-name>
+   Example: sudo snap revert vlc
+
+4. Change the Channel of a Snap Package
+   Command: sudo snap switch --channel=<channel> <package-name>
+   Example: sudo snap switch --channel=beta vlc
+
+Advanced Snap Commands
+----------------------
+
+1. Connect a Snap to a System Interface
+   Command: sudo snap connect <snap>:<plug> <slot>
+   Example: sudo snap connect vlc:camera core:camera
+
+2. Disconnect a Snap from a System Interface
+   Command: sudo snap disconnect <snap>:<plug>
+   Example: sudo snap disconnect vlc:camera
+
+3. Create a Snapshot of a Snap Package
+   Command: sudo snap save <package-name>
+   Example: sudo snap save vlc
+
+4. Restore a Snapshot of a Snap Package
+   Command: sudo snap restore <snapshot-id>
+   Example: sudo snap restore 1
+
+5. Remove a Snapshot of a Snap Package
+   Command: sudo snap forget <snapshot-id>
+   Example: sudo snap forget 1
+
+Snap Configuration Commands
+---------------------------
+
+1. Set Configuration Options for a Snap Package
+   Command: sudo snap set <package-name> <key>=<value>
+   Example: sudo snap set vlc volume=100
+
+2. View Configuration Options for a Snap Package
+   Command: snap get <package-name>
+   Example: snap get vlc
+
+3. Unset Configuration Options for a Snap Package
+   Command: sudo snap unset <package-name> <key>
+   Example: sudo snap unset vlc volume
